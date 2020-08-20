@@ -1,5 +1,5 @@
 # streamlit-leaderboard
-Make simple and ompetition leaderboard using streamlit in one file of code
+Make simple and competition leaderboard using streamlit in one file of code
 
 # Why this is "simple" ?
 1. Insert name, upload file, see the result
