@@ -37,10 +37,10 @@ def get_leaderboard_dataframe(csv_file = 'leaderboard.csv', greater_is_better = 
     return df_leaderboard
 
 # Title
-st.title("Simple Competition Leaderboard With Streamlit")
+st.title("Simple Competition Leaderboard")
 
 # Username Input
-username = st.text_input("Username", value = "guest", max_chars= 20,)
+username = st.text_input("Username", value = "billy", max_chars= 20,)
 username = username.replace(",","") # for storing csv purpose
 st.header(f"Hi {username} !!!")
 
@@ -64,7 +64,7 @@ else:
         Competition Type: {competition_type}
         Metric: {metric_type}
         index  column name : {index_col}
-        target column name: {target_col}
+        target column name : {target_col}
     """)
 
     # set scorer as metric type
@@ -82,7 +82,7 @@ else:
             df_submission = pd.read_csv(uploaded_file)
             datetime_now = datetime.now().strftime("%Y%m%d_%H%M%S")
             filename_submission = f"submission/sub_{username}__{datetime_now}.csv"
-            df_submission.to_csv(filename_submission, index = False)
+            df_submission[[index_col, target_col]].to_csv(filename_submission, index = False)
             # calculate score
             df = df_master.merge(df_submission, how = 'left', on = index_col)
             score = scorer(df[target_col + "_x"], df[target_col + "_y"]) # scorer(true_label, pred_label)
