@@ -4,7 +4,7 @@ Make simple and competition leaderboard using streamlit in one file of code
 # Why this is "simple" ?
 1. Insert name, upload file, see the result
 2. For admin of competition do not need to change the code
-3. Do not using database, just store data inside text file
+3. Does not use a database, just store data inside the text file
 4. No password what so ever, even for submit the result, just put username
 
 # How to Use as User
